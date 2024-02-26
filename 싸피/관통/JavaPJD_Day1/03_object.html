@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //자바스크립트 오브젝트
+        var p1 = {
+            name : 'Kim',
+            age : 27,
+            hobby : 'Youtube'
+
+        }
+
+        console.log(p1)
+
+        //JSON
+        //객체를 -> 순수한 문자열로 나타낸 것.
+        //JSON 내장 객체 사용
+        //JSON.stringify() : Object -> String
+        //JSON.parse() : String -> Object
+
+        var str = JSON.stringify(p1);
+        console.log(str);
+
+        var str2 ='{"name":"Kim","age":27,"hobby":"Youtube"}';
+        var p2 = JSON.parse(str2)
+        console.log(p2)
+
+        var p3 = {
+            name : "Lee",
+            age : 27,
+            eat : function(){
+                console.log("음식을 먹는다");
+            },
+            speak : function(){
+                // ` : Tab위에 있는 것(다시 볼 때 '이거랑 헷갈릴까봐')
+                // this는 객체 자기 자신을 가리킴
+                console.log(`저는 ${this.name}이고, 나이는 ${this.age}입니다.`);
+            }
+        }
+        var str3 = JSON.stringify(p3); //메소드는 반환X / 데이터만 반환
+        console.log(str3);
+    </script>
+</body>
+</html>

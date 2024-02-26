@@ -1,0 +1,91 @@
+* {
+
+  color: rgb(0, 0, 0);
+
+  margin: 0.3rem;
+}
+
+header h1 {
+
+  background-color: blue;
+  color: white;
+}
+
+nav {
+
+  border-bottom: 1px solid black;
+}
+
+.crumbs ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.crumb {
+  display: inline-block;
+}
+
+.crumb a::after {
+  display: inline-block;
+  color: #000000;
+  content: '>';
+  font-size: 100%;
+  font-weight: bold;
+  padding: 0 3px;
+}
+
+section {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.3rem 0.3rem;
+}
+
+article {
+  background-color: orange;
+  width: 30%;
+}
+
+.lecture>h1,
+.course {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.course {
+  
+  background: right/contain content-box border-box no-repeat url('/media/examples/rain.svg') white;
+  width: 90%;
+}
+
+.course>h3,
+.course>p {
+  margin: 0.2rem;
+  font-size: 1rem;
+}
+
+.lecture {
+  margin: 0;
+  padding: 0.3rem;
+  background-color: #eee;
+}
+
+
+aside {
+  background-color: #eee;
+  width: 30%;
+  margin-left: 0.2rem;
+  margin-top: 0.2rem;
+  padding: 0.3rem;
+ 
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background-color: aqua;
+  height: 3rem;
+}

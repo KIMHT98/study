@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 자바에서는 멤버 필드를 추가하려면, 클래스를 수정하고 다시 객체 생성해야 했음
+        // 상속 방아서 자식 클래스에서 추가해준 후 에 자식 객체 생성 했음
+
+
+        // 자바스크립트에서는 오브젝트 생성 후에도, 프로퍼티를 자유롭게 추가, 수정, 삭제 가능
+        // 메소드도 추가, 수정, 삭제 가능
+        var obj = {};
+
+        // 프로퍼티 추가
+        // 객체변수명.프로퍼티명 = 값
+        // 객체변수명['프로퍼티명'] = 값 -> 프로퍼티명에 공백이 있는 경우 사용
+        // 자바스크립트에서는 문자열에 '',"",``다 사용 가능
+        obj.name = "Yang";
+        obj['hobby'] = "Youtube";
+        obj.age =35;
+        obj['favorite singer'] = '악뮤'
+
+        //수정
+        obj.name = "Kim";
+        obj.age = 30;
+
+        //삭제
+        delete obj.hobby
+        delete obj["favorite singer"]
+
+        console.log(obj);
+    </script>
+    
+</body>
+</html>

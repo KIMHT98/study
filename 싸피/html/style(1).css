@@ -1,0 +1,60 @@
+* {
+    margin: 0px;
+}
+div {
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+}
+
+.red {
+    background-color: red;
+}
+.red > p {
+    color :rgb(119, 235, 10)
+}
+.green {
+    background-color: green;
+}
+.green > p {
+    color :rgb(245, 245, 245)
+}
+.yellow {
+    background-color: yellow;
+}
+.yellow > p {
+    color :rgb(250, 10, 170)
+}
+#red { 
+    background-color: pink;
+}
+#red > p { 
+    color: purple;
+}
+
+#green { 
+    background-color: darkgreen;
+}
+#green > p { 
+    color: pink;
+}
+#yellow {
+    background-color: brown;
+}
+#header {
+    height: 100px;
+    background-color: darkblue;
+    position: absolute;
+    top: 0px ;
+}
+footer {
+    height: 100px;
+    background-color: darkblue;
+    position: relative;
+    bottom: 0px ;
+
+}
+footer:hover{
+    background-color: rgb(91, 117, 167);
+    cursor: pointer;
+}

@@ -1,0 +1,64 @@
+/* *은 모든 영역에 적용한다는 뜻 */
+*{
+    margin: 0px;
+}
+
+/* div태그에 적용하는 css */
+div {
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+}
+
+/* .000 으로 쓰면 해당 class에 적용하는 css */
+.red {
+    background-color: red;
+}
+
+/* red class의 p태그에 적용하는 css */
+.red > p{
+    color:aqua;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.green{
+    background-color: green;
+}
+
+/* #000 으로 쓰면 해당 ID에 적용하는 css */
+#red{
+    background-color: red;
+}
+
+#yellow{
+    background-color: yellow;
+}
+
+/* yellow id의 p태그에 적용하는 css */
+#yellow > p{
+    color: brown;
+}
+
+#header{
+    height: 100px;
+    background-color: black;
+    position: relative;
+    top: 0px;
+}
+
+footer{
+    height: 100px;
+    background-color: black;
+    position: relative;
+    bottom: 0px;
+}
+
+/* :hover라는 sudo-class(실제 class는 아니지만 내부적으로 이런 class를 지정하겠다)로 지정
+hover는 마우스를 오버레이 했을 때를 의미*/
+footer:hover{
+    background-color: rgb(91, 138, 224);
+    cursor: pointer; /*cusror는 마우스 포인터의 모양을 바꾸는 것 */
+}

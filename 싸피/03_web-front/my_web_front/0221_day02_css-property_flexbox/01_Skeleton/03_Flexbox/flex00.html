@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-size: 25px;
+      }
+      .container {
+      
+
+ 
+        
+        width: 1000px;
+        margin: 30px auto;
+      }
+
+      .flex-inline {
+        display: inline-flex;
+        flex-direction: column-reverse;
+
+        background-color: aliceblue;
+      }
+
+      .flex-block {
+        display: flex;
+        flex-direction: column;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>display : inline-flex</h2>
+      <div class="flex-inline">
+      <span>시작</span>
+        <div>inline-flex</div>
+        <span>끝</span>
+      </div>
+      <h2>dixplay : flex</h2>
+      <div class="flex-block">
+        <span>시작</span>
+        <div>flex</div>
+        <span>끝</span>
+      </div>
+    </div>
+  </body>
+</html>

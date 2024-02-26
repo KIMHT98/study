@@ -1,0 +1,24 @@
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title > p {
+    font-size: 30px;
+}
+.title {
+    width: 200px;
+    
+    text-align: center;
+}
+.search {
+    display: flex;
+
+}
+.select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}

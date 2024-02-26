@@ -1,0 +1,212 @@
+* {
+    margin: 0px;
+}
+#header{
+    display: flex ;
+    align-items: center; /* 상하 정렬*/
+    position : relative;
+    /* justify-content: center; */ /*얘는 좌우 정렬*/
+}
+#header span {
+    margin-right: 10px;
+    font-size: 5;
+    color: white;
+    position :relative;
+}
+#header span:hover{
+    background-color: #80BFB4;
+    cursor: pointer;
+    height: 50px;
+    
+}
+#mark {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    top: 0px;
+}
+
+.search_input{
+    font-size: 16px;
+    width: 95.5%;
+    
+    border:1px solid black;
+    outline: none;
+    float: left;
+    height: 20px;
+}
+button {
+    height: 24.3px;
+    border: 1px solid black;
+    float: center;
+    background-color: white;
+}
+.ssafy_text {
+    margin-left: auto; 
+    margin-right: auto;
+    border-radius : 10px; 
+    width:95%; 
+    height:50px; 
+    background-color: rgb(221, 235, 255);
+    display : flex;
+    align-items: center;
+    padding-left: 20px;
+    border : 1px solid rgb(124, 171, 236)
+}
+.classification {
+    margin-left: auto; 
+    margin-right: auto;
+    width:95%; 
+    height:30px; 
+    background-color: rgb(255, 255, 255);
+    display : flex;
+    align-items: center;
+    padding-left: 20px;
+    border : 1px solid rgb(119, 119, 119)
+}    
+a { 
+    text-decoration: none;
+    color: blue;
+} 
+.samsung1 {
+    background-color:blue;
+    margin-left: auto; 
+    margin-right: auto;
+    width:97.5%; 
+    height:50px;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex {
+    margin-left: auto; 
+    margin-right: auto;
+    width:97.1%; 
+    height: 30px;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid blue;
+}
+.index1 {
+    width : 100px;
+    height: 120px;
+    margin-left: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    float: left;
+    
+}
+.container1 { 
+    width: 340px;
+    height: 570px;
+    border: 3px solid blue;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    margin-right: 13px;
+}
+.ssafy2 {
+    height:100px;
+    width : 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    vertical-align: center;
+    text-align: center;
+    float: right;
+    background-color: blue;
+    color:white;
+    margin-right: 13px;
+}
+.ssafy3 {
+    width: 340px;
+    height: 325px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    
+}
+.ssafy3_img {
+    height: 320px;
+    width : 320px;
+   
+
+}
+.main {
+    display:flex;
+    align-items: center;
+    border-top: 1px solid grey;
+}
+.main1 {
+    background-color: blue;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+.main2 {
+    
+    padding-left: 90px;
+}
+.gndnjs {
+    display:flex;
+    align-items: center;
+    border-top: 1px solid grey;
+}
+.gndnjs1 {
+    background-color: blue;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+.gndnjs2 {
+    
+    padding-left: 80px;
+}
+.dnsdud {
+    display:flex;
+    align-items: center;
+    border-top: 1px solid grey;
+}
+.dnsdud1 {
+    background-color: blue;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+.dnsdud2 {
+    
+    padding-left: 40px;
+}
+.homepage {
+    display:flex;
+    align-items: center;
+    border-top: 1px solid grey;
+}
+.homepage1 {
+    background-color: blue;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+.homepage2 {
+    display: flex;
+    padding-left: 43px;
+
+
+}
+.hpimg1 {
+    width: 20px;
+    height: 20px;
+}
