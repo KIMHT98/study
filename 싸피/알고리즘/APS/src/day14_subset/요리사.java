@@ -1,68 +1,62 @@
 package day14_subset;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class 요리사 {
-	static int n,r;
+	static int n, r, sumS;
 	static int[][] S;
 	static int[] sel;
 	static int[] list;
-	static int[][] 경우의수;
-	static int index = 0;
+	static List<Integer> synergy;
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int T= sc.nextInt();
-		for(int t=1;t<=T;t++) {
-			n =sc.nextInt();
-			S = new int[n][n];
-			r=2;
+		int T = sc.nextInt();
+		for (int t = 1; t <= T; t++) {
+			n = sc.nextInt();
+			r = n / 2;
 			sel = new int[r];
-			경우의수 = new int[n*(n-1) /2][2];
-			for(int i=0;i<n;i++) {
-				for(int c=0;c<n;c++) {
-					S[i][c] = sc.nextInt();
+			synergy = new ArrayList<>();
+			S = new int[n][n];
+			for (int r = 0; r < n; r++) {
+				for (int c = 0; c < n; c++) {
+					S[r][c] = sc.nextInt();
 				}
 			}
 			list = new int[n];
-			for(int i=0;i<n;i++) {
-				list[i]=i;
+			for (int i = 0; i < n; i++) {
+				list[i] = i;
 			}
-			index = 0;
-			comb(0,0);
-			for(int[] a : 경우의수) {
-//				System.out.println(Arrays.toString(a));
+			comb(n, r);
+			int minS = Integer.MAX_VALUE;
+			for (int i = 0; i < synergy.size() / 2; i++) {
+				minS = Math.min(minS, Math.abs(synergy.get(i) - synergy.get(synergy.size() - i - 1)));
 			}
-			int min = Integer.MAX_VALUE;
-			int sum =  0;
-			for(int i=0;i<경우의수.length/2;i++) {
-				sum+=Math.abs(S[경우의수[i][0]][경우의수[i][1]]+S[경우의수[i][1]][경우의수[i][0]]-S[경우의수[경우의수.length-1-i][0]][경우의수[경우의수.length-1-i][1]]-S[경우의수[경우의수.length-1-i][1]][경우의수[경우의수.length-1-i][0]]);
-				min = Math.min(sum, min);
-				sum = 0;
-			}
-			System.out.println("#"+t+" "+min);
-			
-			
+			System.out.println("#"+t+" "+minS);
+
 		}
 	}
-	
-	public static void comb(int idx,  int sidx) {
-		if(sidx==r) {
-			경우의수[index][0] = sel[0];
-			경우의수[index][1] = sel[1];
-			index++;
+
+	public static void comb(int n, int r) {
+		sumS = 0;
+		if (r == 0) {
+			for (int i = 0; i < sel.length - 1; i++) {
+				for (int j = i + 1; j < sel.length; j++) {
+					sumS += S[sel[i]][sel[j]] + S[sel[j]][sel[i]];
+				}
+			}
+			synergy.add(sumS);
+
+		} else if (n < r)
 			return;
-		}if(idx==n) {
-			return;
+		else {
+			sel[r - 1] = list[n - 1];
+			comb(n - 1, r - 1);
+			comb(n - 1, r);
+
 		}
-		sel[sidx] = list[idx];
-		comb(idx+1,sidx+1);
-		
-	
-		comb(idx+1,sidx);
-		}
-		
-		
 	}
 
-
+}
