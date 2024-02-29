@@ -1,4 +1,4 @@
-package day_15_분할정복;
+package day15_분할정복;
 
 public class 분할정복_4_이진탐색_재귀2 {
 	static int[] arr;
