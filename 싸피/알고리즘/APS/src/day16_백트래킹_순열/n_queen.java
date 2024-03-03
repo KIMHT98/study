@@ -31,12 +31,12 @@ public class n_queen {
 	public static void perm(int idx) {
 		if (idx == n) {
 			boolean istrue = true;
-			for (int j = 1; j < n; j++) {
+			out:for (int j = 1; j < n; j++) {
 				for (int i = j; i < n; i++) {
 					int d = Math.abs(result[i] - result[i - j]);
 					if (d == j) {
 						istrue = false;
-						break;
+						break out;
 					}
 				}
 			}
