@@ -1,0 +1,48 @@
+package com.ssafy.servlet;
+
+import java.io.IOException;
+
+import com.ssafy.dto.Person;
+import com.ssafy.manager.PersonManager;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class MainServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+	
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String action = req.getParameter("action");
+		
+		switch(action) {
+		case "regist":
+			doRegist(req,resp);
+			break;
+		case "list":
+			doList(req,resp);
+			break;
+		}
+	 }
+	private void doRegist(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		String name = req.getParameter("name");
+		int age =Integer.parseInt(req.getParameter("age"));
+		String gender = req.getParameter("gender");
+		String[] hobbies = req.getParameterValues("hobby");
+		
+		Person p = new Person(name, age, gender, hobbies);
+		
+		PersonManager pm = PersonManager.getInstance();//싱글턴
+		pm.regist(p);
+		
+		req.setAttribute("person", p);
+		
+		RequestDispatcher disp = req.getRequestDispatcher("/12_result.jsp");
+		disp.forward(req, resp);
+	}
+
+}

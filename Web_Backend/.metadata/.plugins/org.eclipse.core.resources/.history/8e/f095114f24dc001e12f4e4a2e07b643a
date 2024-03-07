@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%--로그인 처리 용도만 할 것 --%>
+    <%
+    String id = request.getParameter("id");
+    String pw = request.getParameter("password");
+    
+    //실제로는 id / pw 가지고 db에 저장되어 있는 유저가 맞는지 확인
+	//아니면 Manager를 통해 확인 가능(db안배웠으니깐)
+    if(id.equals("ssafy")&&pw.equals("1234")){
+    	//로그인 성공
+    	//세션에 정보를 저장할거임
+    }else{
+    	//로그인 실패
+    }
+    %>
