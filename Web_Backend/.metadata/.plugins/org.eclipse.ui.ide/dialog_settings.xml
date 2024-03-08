@@ -82,6 +82,14 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\SSAFY\Desktop\study\Web_Backend\Web_BackEnd_실습\day4\back_db_ws_04_3"/>
+			<item value="C:\Users\SSAFY\Desktop\study\Web_Backend\Web_BackEnd_실습\day3\back_db_ws_03_2"/>
+			<item value="C:\Users\SSAFY\Desktop\study\Web_Backend\Web_BackEnd_실습\day4\back_db_ws_04_2"/>
+			<item value="C:\Users\SSAFY\Desktop\study\Web_Backend\Web_BackEnd_실습\day4\back_db_hw_04_2"/>
+			<item value="C:\Users\SSAFY\Desktop\study\Web_Backend\Web_BackEnd_실습\day4\back_db_ws_04_1"/>
+			<item value="C:\Users\SSAFY\Desktop\study\Web_Backend\Web_BackEnd_실습\day4\back_db_ws_04_c"/>
+			<item value="C:\Users\SSAFY\Desktop\study\Web_Backend\Web_BackEnd_실습\day4\back_db_ws_04_b"/>
+			<item value="C:\Users\SSAFY\Desktop\study\Web_Backend\Web_BackEnd_실습\day4\back_db_ws_04_a"/>
 			<item value="C:\Users\SSAFY\Desktop\Web_Backend\Web_BackEnd_실습\day3\back_db_ws_03_3"/>
 			<item value="C:\Users\SSAFY\Desktop\Web_Backend\Web_BackEnd_실습\day3\back_db_ws_03_2"/>
 			<item value="C:\Users\SSAFY\Desktop\Web_Backend\Web_BackEnd_실습\day3\back_db_hw_03_2"/>
