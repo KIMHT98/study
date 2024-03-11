@@ -7,7 +7,7 @@ public class Test {
 	public static void main(String[] args) {
 		ApplicationContext context = new GenericXmlApplicationContext("applicationcontext.xml");
 		
-		Programmer p = context.getBean("p",Programmer.class);
+		Programmer p = context.getBean("p", Programmer.class);
 		
 		p.coding();
 	
