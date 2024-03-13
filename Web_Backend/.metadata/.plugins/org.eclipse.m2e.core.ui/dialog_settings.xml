@@ -14,6 +14,7 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="Spring_03_WEBMVC"/>
 			<item value="Spring_03_WebMVC"/>
 			<item value="Spring_02_AOP_02"/>
 			<item value="Spring_01_DI_02_XML"/>
@@ -21,6 +22,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Spring_03_WEBMVC"/>
 			<item value="Spring_03_WebMVC"/>
 			<item value="Spring_02_AOP_02"/>
 			<item value="Spring_01_DI_02_XML"/>

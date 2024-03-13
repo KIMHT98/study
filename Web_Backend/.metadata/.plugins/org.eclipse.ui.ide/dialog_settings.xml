@@ -42,6 +42,13 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\SSAFY\Desktop\Web_BackEnd_실습\7_Spring_MVC\spring_ws_03_3"/>
+			<item value="C:\Users\SSAFY\Desktop\Web_BackEnd_실습\7_Spring_MVC\spring_ws_03_2"/>
+			<item value="C:\Users\SSAFY\Desktop\Web_BackEnd_실습\7_Spring_MVC\spring_hw_03_2"/>
+			<item value="C:\Users\SSAFY\Desktop\Web_BackEnd_실습\7_Spring_MVC\spring_ws_03_1"/>
+			<item value="C:\Users\SSAFY\Desktop\Web_BackEnd_실습\7_Spring_MVC\spring_ws_03_c"/>
+			<item value="C:\Users\SSAFY\Desktop\Web_BackEnd_실습\7_Spring_MVC\spring_ws_03_b"/>
+			<item value="C:\Users\SSAFY\Desktop\Web_BackEnd_실습\7_Spring_MVC\spring_ws_03_a"/>
 			<item value="C:\Users\SSAFY\Desktop\Web_BackEnd_실습\6_Spring_AOP\spring_ws_02_4"/>
 			<item value="C:\Users\SSAFY\Desktop\Web_BackEnd_실습\6_Spring_AOP\spring_hw_02_4"/>
 			<item value="C:\Users\SSAFY\Desktop\Web_BackEnd_실습\6_Spring_AOP\spring_ws_02_3"/>
