@@ -5,6 +5,7 @@ import java.util.Date;
 public class Board {
 	private static int no = 1;//클래스 변수
 	private int id;
+	private String videoId;
 	private String title,writer,content,regDate;
 	private int viewCnt;
 	
@@ -76,10 +77,14 @@ public class Board {
 		this.viewCnt = viewCnt;
 	}
 
-	@Override
-	public String toString() {
-		return "Board [id=" + id + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regDate="
-				+ regDate + ", viewCnt=" + viewCnt + "]";
+	
+
+	public String getVideoId() {
+		return videoId;
+	}
+
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
 	}
 	
 	
