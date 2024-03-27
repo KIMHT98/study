@@ -13,33 +13,7 @@ public class 점심식사시간 {
 	static List<Integer> D1, D2;
 	static int[][] room, S;
 	static List<int[]> P;
-	static boolean[][] visit;
 	static boolean[] sel;
-	static int[] dr = { -1, 1, 0, 0 }, dc = { 0, 0, -1, 1 };
-
-	static int bfs(int srow, int scol, int drow, int dcol) {
-		visit = new boolean[N][N];
-		Queue<int[]> q = new LinkedList<>();
-		q.add(new int[] { srow, scol, 0 });// 행, 열, 움직인 거리
-		visit[srow][scol] = true;
-		while (!q.isEmpty()) {
-			int[] curr = q.poll();
-			if (curr[0] == drow && curr[1] == dcol) {
-				return curr[2] + room[drow][dcol] + 1;
-			}
-			for (int i = 0; i < 4; i++) {
-				int nr = curr[0] + dr[i];
-				int nc = curr[1] + dc[i];
-				if (nr < 0 || nr >= N || nc < 0 || nc >= N)
-					continue;
-				if (visit[nr][nc])
-					continue;
-				visit[nr][nc] = true;
-				q.add(new int[] { nr, nc, curr[2] + 1 });
-			}
-		}
-		return -1;
-	}
 
 	static void subset(int idx) {
 		if (idx >= n) {
@@ -48,17 +22,13 @@ public class 점심식사시간 {
 			D2 = new ArrayList<>();
 			for (int i = 0; i < idx; i++) {
 				if (sel[i]) {
-//					D1.add(bfs(P.get(i)[0], P.get(i)[1], S[0][0], S[0][1]));
 					D1.add(Math.abs(S[0][0]-P.get(i)[0])+Math.abs(S[0][1]-P.get(i)[1])+room[S[0][0]][S[0][1]]+1);
 				} else {
-//					D2.add(bfs(P.get(i)[0], P.get(i)[1], S[1][0], S[1][1]));
 					D2.add(Math.abs(S[1][0]-P.get(i)[0])+Math.abs(S[1][1]-P.get(i)[1])+room[S[1][0]][S[1][1]]+1);
 				}
 			}
 			Collections.sort(D1);
 			Collections.sort(D2);
-//			System.out.println(D1);
-//			System.out.println(D2);
 			for (int i = 3; i < D1.size(); i++) {
 				if (D1.get(i) - D1.get(i - 3) > room[S[0][0]][S[0][1]])
 					continue;
