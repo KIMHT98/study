@@ -44,25 +44,30 @@ public class 점심식사시간 {
 	static void subset(int idx) {
 		if (idx >= n) {
 			int sum = 0;
+			D1 = new ArrayList<>();
+			D2 = new ArrayList<>();
 			for (int i = 0; i < idx; i++) {
 				if (sel[i]) {
-					D1.add(bfs(P.get(i)[0], P.get(i)[1], S[0][0], S[0][1]));
+//					D1.add(bfs(P.get(i)[0], P.get(i)[1], S[0][0], S[0][1]));
+					D1.add(Math.abs(S[0][0]-P.get(i)[0])+Math.abs(S[0][1]-P.get(i)[1])+room[S[0][0]][S[0][1]]+1);
 				} else {
-					D2.add(bfs(P.get(i)[0], P.get(i)[1], S[1][0], S[1][1]));
+//					D2.add(bfs(P.get(i)[0], P.get(i)[1], S[1][0], S[1][1]));
+					D2.add(Math.abs(S[1][0]-P.get(i)[0])+Math.abs(S[1][1]-P.get(i)[1])+room[S[1][0]][S[1][1]]+1);
 				}
 			}
 			Collections.sort(D1);
 			Collections.sort(D2);
-			
+//			System.out.println(D1);
+//			System.out.println(D2);
 			for (int i = 3; i < D1.size(); i++) {
 				if (D1.get(i) - D1.get(i - 3) > room[S[0][0]][S[0][1]])
 					continue;
-				D1.set(i, D1.get(i) + D1.get(i) - D1.get(i - 3) );
+				D1.set(i, D1.get(i) + room[S[0][0]][S[0][1]]-(D1.get(i) - D1.get(i - 3)) );
 			}
 			for (int i = 3; i < D2.size(); i++) {
 				if (D2.get(i) - D2.get(i - 3) > room[S[1][0]][S[1][1]])
 					continue;
-				D2.set(i, D2.get(i) + D2.get(i) - D2.get(i - 3));
+				D2.set(i, D2.get(i) + room[S[1][0]][S[1][1]]-D2.get(i) + D2.get(i - 3));
 			}
 			if(D1.isEmpty()) {
 				min = Math.min(min, D2.get(D2.size()-1));
@@ -82,7 +87,7 @@ public class 점심식사시간 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int T = sc.nextInt();
+		int T =sc.nextInt();
 		for (int t = 1; t <= T; t++) {
 			N = sc.nextInt();
 			room = new int[N][N];
@@ -105,10 +110,9 @@ public class 점심식사시간 {
 			n = P.size();
 			min = Integer.MAX_VALUE;
 			sel = new boolean[n];
-			D1 = new ArrayList<>();
-			D2 = new ArrayList<>();
+			
 			subset(0);
-			System.out.println(min);
+			System.out.println("#"+t+" "+min);
 
 		}
 	}
