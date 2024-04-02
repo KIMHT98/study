@@ -38,7 +38,7 @@ public class 네트워크연결 {
 		p = new int[N+1];
 		for(int i=1;i<=N;i++) {
 			p[i] = i;
-		}
+		} 
 		
 		int ans = 0;
 		int pick = 0;

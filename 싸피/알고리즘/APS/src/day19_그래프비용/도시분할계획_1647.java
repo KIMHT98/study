@@ -55,6 +55,6 @@ public class 도시분할계획_1647 {
 	static int findset(int x) {
 		if(x != p[x]) p[x] = findset(p[x]);
 		return p[x];
-	}
+	} 
 
 }

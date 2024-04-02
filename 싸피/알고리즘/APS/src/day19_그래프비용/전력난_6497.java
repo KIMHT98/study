@@ -74,6 +74,6 @@ public class 전력난_6497 {
 		if (i != p[i])
 			p[i] = findset(p[i]);
 		return p[i];
-	}
+	} 
 
 }

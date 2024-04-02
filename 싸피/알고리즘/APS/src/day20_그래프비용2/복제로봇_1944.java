@@ -132,6 +132,6 @@ public class 복제로봇_1944 {
 		if (x != p[x])
 			p[x] = findset(p[x]);
 		return p[x];
-	}
+	} 
 
 }
