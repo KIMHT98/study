@@ -60,7 +60,7 @@ public class 그래프비용_02_다익스트라_우선순위큐 {
 		
 		while(!pq.isEmpty()) {
 			Node curr = pq.poll();
-			
+
 			if(visit[curr.v]) continue;//이미 방문했다면 비용을 알고 있다는 뜻 
 			visit[curr.v]= true;//선택
 			

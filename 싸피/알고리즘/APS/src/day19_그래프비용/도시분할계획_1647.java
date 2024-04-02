@@ -35,6 +35,7 @@ public class 도시분할계획_1647 {
 		}
 		int ans = 0;
 		int pick = 0;
+		int max = 0;
 		for(int i=0;i<M;i++) {
 			int px = findset(edges[i][0]);
 			int py = findset(edges[i][1]);
@@ -43,10 +44,12 @@ public class 도시분할계획_1647 {
 				p[py] = px;
 				ans+=edges[i][2];
 				pick++;
+				max = Math.max(max, edges[i][2]);
 			}
 			if(pick == N-1)break;
 			
 		}
+		System.out.println(ans-max);
 		
 	}
 	static int findset(int x) {
