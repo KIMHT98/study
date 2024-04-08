@@ -72,7 +72,7 @@ public class 미생물격리 {
 					if (now == null)
 						continue;
 					now.time++;
-					cell[now.row][now.col] = null;
+					cell[now.row][now.col] = cell[now.row][now.col] == now?null:cell[now.row][now.col];
 					now.row += dr[now.dir - 1];
 					now.col += dc[now.dir - 1];
 					if(now.row==0||now.row==N-1||now.col==0||now.col==N-1) {
@@ -80,6 +80,7 @@ public class 미생물격리 {
 						now.cnt/=2;
 						if(now.cnt==0) {
 							cluster[i] = null;
+							cell[now.row][now.col]=null;
 							continue;
 						}
 						now.dir = oppositeDir(now.dir);
@@ -87,9 +88,9 @@ public class 미생물격리 {
 					if (cell[now.row][now.col] == null) {
 						cell[now.row][now.col] = now;
 					} else {
-						if (cell[now.row][now.col].time != now.time) {
+						if (cell[now.row][now.col].time < now.time) {
 							cell[now.row][now.col] = now;
-						} else {
+						} else if(cell[now.row][now.col].time == now.time) {
 							if (cell[now.row][now.col].cnt > now.cnt) {
 								cell[now.row][now.col].sum += now.cnt;
 								cluster[cell[now.row][now.col].num] = cell[now.row][now.col];
@@ -123,5 +124,6 @@ public class 미생물격리 {
 
 		}
 	}
-
+	
 }
+
