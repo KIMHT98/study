@@ -1,4 +1,4 @@
-package day20_그래프비용2;
+package class2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
