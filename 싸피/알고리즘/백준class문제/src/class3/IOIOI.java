@@ -9,11 +9,21 @@ public class IOIOI {
 		int n = sc.nextInt();
 		int m = sc.nextInt();
 		String s = sc.next();
-		String P = "I";
-		for(int i=0;i<n;i++) {
-			P+="OI";
+		int result = 0;
+		int cnt = 0;
+		for (int i = 1; i < m - 1; i++) {
+			if (s.charAt(i) == 'O' && s.charAt(i - 1) == 'I' && s.charAt(i + 1) == 'I') {
+				cnt++;
+				if (cnt == n) {
+					result++;
+					cnt--;
+				}
+				i++;
+			}else {
+				cnt = 0;
+			}
 		}
-		System.out.println(P);
+		System.out.println(result);
 	}
 
 }
