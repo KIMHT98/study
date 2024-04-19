@@ -20,23 +20,40 @@
     //초기값 설정
     let cntNum = 0
 
-    let btn = document.querySelector("#myBtn")
+    //버튼
+    const btn = document.querySelector("#myBtn")
 
-    btn.addEventListener("click",function(){
-      console.log("버튼 작동 확인")
-      
-      cntNum++
-      console.log(cntNum)
+    //숫자 증가 함수
+    const increaseFun= function(){
+      console.log("버튼 클릭됨")
 
-      let increased = document.getElementById("cnt")
-      increased.innerText = cntNum
-    })
+      //함수가 실행되면 숫자 1 증가
+      cntNum++;
+
+      //id가 cnt인 요소 가져와서 변수로 저장
+      const cnt = document.querySelector("#cnt")
+
+      //그 요소의 내용에 cntNum을 넣어준다.
+      cnt.innerText = cntNum
+    } 
+    //addEventListener설정
+    btn.addEventListener("click",increaseFun)
+    // addEventListener에서 함수 정의까지 하기
+    // btn.addEventListener("click",function(){
+    //   console.log("버튼 작동 확인")
+    //   cntNum++
+    //   console.log(cntNum)
+
+    //   let increased = document.getElementById("cnt")
+    //   increased.innerText = cntNum
+    // })    
+   
 
 
 
 
 
-    // 초기값
+      // 초기값
     // let cntNum = 0
 
     // // id가 btn인 요소를 선택

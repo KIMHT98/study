@@ -11,7 +11,14 @@
     <h1>Do Copy My Text</h1>
   </div>
   <script>
-    // 코드를 작성하시오.
+    // h1태그 가져오기
+    const h1tag = document.querySelector("h1")
+    //이벤트 등록(복사할 때 이벤트가 시작됨)
+    h1tag.addEventListener("copy",function(event){
+      //브라우저의 기본 동작을 실행하지 않도록 한다.
+      event.preventDefault()//copy가 실행되지 않도록 한다.
+      alert("Sorry you can\'t copy anything:)")
+    })
 
 
     

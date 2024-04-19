@@ -11,15 +11,18 @@
     <div id="child"></div>
   </div>
   <script>
-    // 코드를 작성하시오.
-
     // element: getElementById - parents
-
+    const parents = document.getElementById("parents")//부모
+    console.log(parents)
     // child: getElementById - child
-
+    const child = document.getElementById("child")//자식
+    console.log(child)
     // away: removeChild - child
+    const away = parents.removeChild(child)//제거되는 요소 반환
+    console.log(away)
 
-
+    
+    
     // const element = document.getElementById("parents")
     // const child = document.getElementById("child")
     // const away = parents.removeChild(child)

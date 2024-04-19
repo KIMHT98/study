@@ -12,15 +12,28 @@
 
   <script>
     // 코드를 작성하시오.
-    
+    //인풋값을 변수로 받음    
     let textInput = document.querySelector("#text-input")
     console.log(textInput)
 
-    textInput.addEventListener("input",function(event){
-      console.log(event)
-      document.querySelector("p").innerText = event.target.value
-    })
+    //글이 써지면 함수 실행(함수 내부에서 정의)
+    // textInput.addEventListener("input",function(event){
+    //   console.log(event)//이벤트에 대한 정보 출력
+    //   document.querySelector("p").innerText = event.target.value//p태그로 인풋값 표시
+    // })
+    
+    //글 입력 함수
+    const writeform = function(){
+      console.log(event)//이벤트에 대한 정보 출력
+      console.log(event.target)//이벤트의 대상 -> input
+      console.log(event.target.value)//내가 쓴 입력값
 
+      const pTag = document.querySelector('p')//p태그 소환
+      pTag.innerText = event.target.value//p태그에 값 표시
+
+    }
+
+    textInput.addEventListener("input",writeform)
 
 
 
