@@ -51,7 +51,7 @@ readBtn.addEventListener("click",function(){
   const content = JSON.parse(localStorage.getItem("temp"))
   localStorage.setItem("data",JSON.stringify(content))
   if(!content){
-    liTag.innerText = "내용을 입력해주세요."
+    liTag.innerText = "저장된 내용이 없습니다."
   }else{
     //liTag에 내용 넣기
     liTag.innerText = content

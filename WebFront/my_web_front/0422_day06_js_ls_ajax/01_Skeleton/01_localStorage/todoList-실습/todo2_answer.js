@@ -34,6 +34,7 @@ const createTodo = () => {
     }
     createTodoItem(todoItem)
     inputTag.value = '' //입력 초기화
+    
     inputTag.focus()
 
     //로컬스토리지에 직접 저장을 하자
