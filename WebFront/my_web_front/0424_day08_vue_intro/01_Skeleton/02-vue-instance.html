@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<!-- 
+  1. CDN 작성 
+  2. createApp 생성 
+  3. <div id="app"> 생성 
+  4. mount 연결 
+  5. setup 함수 message
+  6. 콧수염방식 끄내기
+  7. 자바스크립트 표현식도 가능
+ -->
+ <div id="app">
+    <p>{{ object.id + 1 }}</p>
+ </div>
+<body>
+  <script>
+   const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup(){
+        const object = { id: ref(0) }
+        const {id} = object
+        return{
+          object
+        }
+      }
+    })
+    app.mount("#app")
+
+  </script>
+</body>
+
+</html>

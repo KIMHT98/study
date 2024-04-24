@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <input id="변경할값" type="text">
+    <p>입력 값: {{ normalValue }}</p>
+    <button @click="updateValues">값 업데이트</button>
+  </div>
+
+  <script>
+    const { createApp, ref } = Vue//객체 생성
+
+    const app = createApp({
+      setup() {
+        let normalValue = ref("")//입력 값 기본은 공백
+        const updateValues = function () {
+          //변경할 값
+          //input태그에서 값을 가져온다.
+          const reactiveValue = ref(document.querySelector("#변경할값").value)
+          //값 변경
+          normalValue.value = reactiveValue.value
+          console.log(reactiveValue.value)
+        }
+        return {
+          normalValue,
+          updateValues
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
