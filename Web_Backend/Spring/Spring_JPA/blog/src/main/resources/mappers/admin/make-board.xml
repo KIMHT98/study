@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.blog.admin.model.mapper.BoardAdminMapper">
+
+    <resultMap id="boardType" type="BoardType">
+        <result column="btype" property="btype"/>
+        <result column="btype_name" property="btypeName"/>
+    </resultMap>
+
+    <select id="listCategory" resultType="category">
+        select ccode, cname
+        from category
+        order by ccode
+    </select>
+
+    <insert id="createCategory" parameterType="String">
+        insert into category (cname)
+        values (#{categoryName})
+    </insert>
+
+    <select id="listBoardType" resultMap="boardType">
+        select btype, btype_name
+        from board_type
+        order by btype
+    </select>
+
+    <insert id="createBoard" parameterType="boardList">
+        insert into board_list (bname, ccode, btype)
+        values (#{bname}, #{ccode}, #{btype})
+    </insert>
+
+    <resultMap id="bMenu" type="boardMenus">
+        <result column="ccode" property="ccode" />
+        <result column="cname" property="cname" />
+        <collection property="boardLists" column="ccode" javaType="list" ofType="boardList" select="boardListSelect" />
+    </resultMap>
+
+    <resultMap id="bList" type="boardList">
+        <result column="bcode" property="bcode" />
+        <result column="bname" property="bname" />
+        <result column="btype" property="btype" />
+        <result column="control" property="control" />
+    </resultMap>
+
+    <select id="listBoardMenus" resultMap="bMenu">
+        select ccode, cname
+        from category
+    </select>
+
+    <select id="boardListSelect" resultMap="bList">
+        <![CDATA[
+        select bcode, bname, btype,
+               case btype
+                   when 4 then 'reboard'
+                   when 5 then 'picture'
+                   when 6 then 'bbs'
+                   else 'article'
+                   end control
+        from board_list
+        where ccode = #{ccode}
+        order by bcode
+        ]]>
+    </select>
+
+</mapper>

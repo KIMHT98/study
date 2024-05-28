@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.blog.board.model.mapper.ReboardMapper">
+
+    <resultMap id="article" type="board">
+        <result column="article_no" property="articleNo"/>
+        <result column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="subject" property="subject"/>
+        <result column="content" property="content"/>
+        <result column="hit" property="hit"/>
+        <result column="register_time" property="registerTime"/>
+    </resultMap>
+
+    <resultMap id="reply" type="reboard" extends="article">
+        <result column="reboard_no" property="reboardNo"/>
+        <result column="group_no" property="groupNo"/>
+        <result column="depth" property="depth"/>
+        <result column="step" property="step"/>
+        <result column="parent_no" property="parentNo"/>
+        <result column="reply" property="reply"/>
+    </resultMap>
+
+    <sql id="search">
+        <if test="word != null and word != ''">
+            <if test="key == 'subject'">
+                and subject like concat('%', #{word}, '%')
+            </if>
+            <if test="key != 'subject'">
+                and ${key} = #{word}
+            </if>
+        </if>
+    </sql>
+
+    <select id="listArticle" parameterType="map" resultMap="reply">
+        select b.article_no, b.user_id, b.subject, b.content, b.hit, b.register_time, m.user_name,
+        r.reboard_no, r.group_no, r.depth, r.step, r.parent_no, r.reply
+        from board b join users m
+        on b.user_id = m.user_id
+        join reboard r
+        on b.article_no = r.article_no
+        where b.bcode = #{bcode}
+        <include refid="search"/>
+        order by r.group_no desc, r.step
+        limit #{start}, #{listsize}
+    </select>
+
+    <select id="getTotalArticleCount" parameterType="map" resultType="int">
+        select count(article_no)
+        from board
+        where bcode = #{bcode}
+        <include refid="search"/>
+    </select>
+
+    <insert id="writeArticle" parameterType="reboard">
+        insert into board (user_id, subject, content, hit, register_time, bcode)
+        values (#{userId}, #{subject}, #{content}, 0, now(), #{bcode})
+        <selectKey resultType="int" keyProperty="articleNo" order="AFTER">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+
+    <insert id="newReplyArticle" parameterType="reboard">
+        insert into reboard (article_no, group_no, depth, step, parent_no, reply)
+        values (#{articleNo}, #{articleNo}, #{depth}, #{step}, #{parentNo}, 0)
+    </insert>
+
+    <update id="updateStep" parameterType="reboard">
+        update reboard
+        set step = step + 1
+        where group_no = #{groupNo} and step &gt; #{step}
+    </update>
+
+    <insert id="replyArticle" parameterType="reboard">
+        insert into reboard (article_no, group_no, depth, step, parent_no, reply)
+        values (#{articleNo}, #{groupNo}, #{depth} + 1, #{step} + 1, #{parentNo}, 0)
+    </insert>
+
+    <update id="updateReply" parameterType="int">
+        update reboard
+        set reply = reply + 1
+        where article_no = #{patendNo}
+    </update>
+
+    <select id="getArticle" parameterType="int" resultMap="reply">
+        select b.article_no, b.user_id, b.subject, b.content, b.hit, b.register_time, b.bcode,
+               r.reboard_no, r.group_no, r.depth, r.step, r.parent_no, r.reply, u.user_name
+        from board b join reboard r
+        on b.article_no = r.article_no
+        join users u
+        on b.user_id = u.user_id
+        where b.article_no = #{articleNo}
+    </select>
+
+    <update id="updateHit" parameterType="int">
+        update board
+        set hit = hit + 1
+        where article_no = #{articleNo}
+    </update>
+
+</mapper>
